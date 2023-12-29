@@ -1,5 +1,3 @@
-
-use clap::Parser;
 use futures::{future, prelude::*};
 use std::{
     net::{ SocketAddr},
@@ -9,12 +7,6 @@ use std::process::exit;
 use tarpc::{client, context, server::{self, incoming::Incoming, Channel}, tokio_serde::formats::Json};
 use tarpc_server::{World, WorldClient};
 
-#[derive(Parser)]
-struct Flags {
-    /// Sets the port number to listen on.
-    #[clap(long)]
-    port: u16,
-}
 
 // This is the type that implements the generated World trait. It is the business logic
 // and is used to start the server.
