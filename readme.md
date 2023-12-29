@@ -1,20 +1,25 @@
 how to test?
 
+
+* run drpc bench
 ```
 cargo run --release --package drpc-server --bin drpc-server
-
+```
+```log
 Starting tcp server on 0.0.0.0:10000
 start bench
 Total 100000,QPS: 21181 QPS/s
 Total 100000,Time: 4.7212609s ,each:47212 ns/op
 ```
 
-
+* run tarpc bench
 ```
-cargo run --release --package drpc-server --bin drpc-server
+cargo run --release --package tarpc-server --bin tarpc-server
+```
 
+```log
 Starting tcp server on 0.0.0.0:10000
 start bench
-Total 100000,QPS: 20602 QPS/s
-Total 100000,Time: 4.8539222s ,each:48539 ns/op
+Total 100000,QPS: 9787 QPS/s
+Total 100000,Time: 10.2177012s ,each:102177 ns/op
 ```
