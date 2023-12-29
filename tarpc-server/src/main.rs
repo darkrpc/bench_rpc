@@ -1,19 +1,12 @@
 
 use clap::Parser;
 use futures::{future, prelude::*};
-use rand::{
-    distributions::{Distribution, Uniform},
-    thread_rng,
-};
 use std::{
-    net::{IpAddr, Ipv6Addr, SocketAddr},
+    net::{ SocketAddr},
     time::Duration,
 };
-use std::net::Ipv4Addr;
 use std::process::exit;
 use tarpc::{client, context, server::{self, incoming::Incoming, Channel}, tokio_serde::formats::Json};
-use tokio::time;
-use tracing::Instrument;
 use tarpc_server::{World, WorldClient};
 
 #[derive(Parser)]
@@ -81,7 +74,7 @@ async fn run(){
     let now = std::time::Instant::now();
     let total = 100000;
     for _ in 0..total {
-        let resp: i32 = client.hello(context::current(), 1).await.unwrap();
+        let _resp: i32 = client.hello(context::current(), 1).await.unwrap();
     }
     now.qps(total);
     now.time(total);
