@@ -1,5 +1,6 @@
 how to test?
 
+* run `rustup update` command update Rust compiler
 
 * run drpc bench
 ```
